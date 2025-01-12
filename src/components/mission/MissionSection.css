@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text:wght@400&display=swap');
+
+
+/* Mission Section Styling */
+.mission-section {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.mission-left {
+  flex: 1;
+  background-color: rgb(172,137,104);
+  color: rgb(	51	41	31);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+}
+
+.mission-left h1 {
+  font-family: 'DM Serif Text', serif;
+  font-size: 6rem; /* Large font size */
+  line-height: 1.2;
+}
+
+.mission-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+  background-color: #f9f9f9c7;
+  text-align: left;
+}
+
+.mission-right h2 {
+  font-family: 'DM Serif Text', serif;
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.mission-right p {
+  font-size: 1.2rem;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* Responsiveness for Tablets */
+@media (max-width: 768px) {
+  .mission-left h1 {
+    font-size: 3rem;
+  }
+
+  .mission-right h2 {
+    font-size: 2rem;
+  }
+
+  .mission-right p {
+    font-size: 1rem;
+  }
+}
+
+/* Responsiveness for Mobile */
+@media (max-width: 480px) {
+  .mission-section {
+    flex-direction: column; /* Stack the sections */
+  }
+
+  .mission-left,
+  .mission-right {
+    flex: none;
+  }
+
+  .mission-left {
+    padding: 0px 20px;
+  }
+
+  .mission-left h1 {
+    font-size: 2rem;
+  }
+
+  .mission-right {
+    padding: 30px 20px;
+    text-align: center; /* Center align text */
+  }
+
+  .mission-right h2 {
+    font-size: 1.8rem;
+  }
+
+  .mission-right p {
+    font-size: 0.9rem;
+  }
+}

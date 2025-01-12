@@ -1,0 +1,73 @@
+/* Topper Section */
+.topper-section {
+  padding: 20px;
+}
+
+/* Circular Image for School Topper */
+.circular-image {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Horizontal Scrolling Container */
+.class-toppers-container {
+  display: flex;
+  overflow-x: auto;
+  gap: 20px; /* Space between cards */
+  padding: 25px 34px;
+  scroll-snap-type: x mandatory; /* Smooth scrolling snap */
+}
+
+.class-toppers-container::-webkit-scrollbar {
+  height: 8px;
+}
+
+.class-toppers-container::-webkit-scrollbar-thumb {
+  background: #888; /* Customize scrollbar color */
+  border-radius: 10px;
+}
+
+.class-toppers-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Horizontal Cards */
+.horizontal-card {
+  flex: 0 0 auto; /* Prevent shrinking */
+  width: 300px; /* Adjust card width */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  overflow: hidden;
+  justify-content: center;
+}
+
+.card-img-top {
+  object-fit: cover;
+  width: 250px;
+  height: 200px;
+}
+
+.card-body {
+  text-align: center;
+  padding: 30px;
+}
+
+.school-topper-star{
+  position: absolute;
+  top: -25px;
+  left: -23px;
+}
+.school-topper-star img{
+  transform: rotate(45deg);
+  width: 50px;
+  height: 50px;
+}
+
+.star-text{
+  position: absolute;
+  left: 0;
+  top: 14px;
+  font-size: 10px;
+}

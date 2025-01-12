@@ -1,0 +1,234 @@
+/* General Navbar Styles */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px; /* Added horizontal padding */
+  position: absolute;
+  width: 100%;
+  z-index: 10;
+  background-color: transparent;
+  transition: all 0.3s ease-in-out;
+  box-sizing: border-box; /* Prevent padding issues */
+}
+
+.navbar.scrolled {
+  position: fixed;
+  top: 0;
+  background-color: white;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  justify-content: space-between;
+  padding: 5px 20px;
+  width: 100%;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  width: 50px;
+  height: auto;
+  transition: all 0.3s ease-in-out;
+  max-width: 100%; /* Prevent overflow */
+}
+
+.navbar.scrolled .logo img {
+  width: 200px; /* Reduced from 330px for better responsive design */
+  height: auto;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  align-items: center; /* Better vertical alignment */
+}
+
+.nav-links li a {
+  text-decoration: none;
+  font-size: 16px; /* Slightly smaller for better readability */
+  color: #333;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  padding: 5px 0;
+  display: block;
+}
+
+.nav-links li a:hover {
+  color: #ff5722;
+  border-bottom: 2px solid #ff5722;
+}
+
+/* Dropdown Styles */
+.nav-links .dropdown {
+  position: relative;
+}
+
+.nav-links .dropdown .dropdown-arrow {
+  font-size: 12px;
+  margin-left: 5px;
+}
+
+.nav-links .dropdown .dropdown-arrow::after {
+  content: "\25bc";
+  display: inline-block; 
+  margin-left: 4px;
+  color: gray;
+  transition: transform 0.3s ease;
+}
+
+.nav-links .dropdown:hover .dropdown-arrow::after {
+  transform: rotate(180deg); /* Rotate arrow on hover */
+}
+
+.nav-links .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 220px;
+  z-index: 10;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  border-radius: 4px;
+}
+
+.nav-links .dropdown:hover .dropdown-menu {
+  display: block;
+  opacity: 1;
+}
+
+.nav-links .dropdown-menu li a {
+  font-weight: normal;
+  color: #333;
+  padding: 12px 15px;
+  display: block;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.nav-links .dropdown-menu li:last-child a {
+  border-bottom: none;
+}
+
+.nav-links .dropdown-menu li a:hover {
+  background-color: #f8f8f8;
+  color: #ff5722;
+}
+
+/* Responsive Styling */
+@media (max-width: 1080px) {
+  .navbar {
+    padding: 10px 15px;
+  }
+
+  .navbar.scrolled {
+    padding: 5px 15px;
+  }
+
+  .navbar.scrolled .logo img {
+    width: 150px; /* Even smaller for mobile */
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    background-color: white;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    width: 250px;
+    padding: 10px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+  }
+
+  .nav-links li a {
+    padding: 12px 20px;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .nav-links li:last-child a {
+    border-bottom: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 11;
+  }
+
+  .hamburger span {
+    width: 25px;
+    height: 2px;
+    background-color: #333;
+    transition: all 0.3s ease-in-out;
+    border-radius: 2px;
+  }
+
+  /* Animated hamburger */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+  }
+
+  /* Responsive Dropdown Menu */
+  .nav-links .dropdown-menu {
+    position: static;
+    width: 100%;
+    display: none;
+    padding: 0;
+    box-shadow: none;
+    background-color: #f8f8f8;
+  }
+
+  .nav-links .dropdown.active .dropdown-menu {
+    display: block;
+  }
+
+  .nav-links .dropdown.active > a {
+    background-color: #f0f0f0;
+    color: #ff5722;
+  }
+
+  .nav-links .dropdown-menu li a {
+    padding-left: 35px;
+  }
+}
+
+/* Additional mobile optimization */
+@media (max-width: 480px) {
+  .navbar.scrolled .logo img {
+    width: 120px;
+  }
+
+  .nav-links {
+    width: 100%;
+    right: 0;
+    left: 0;
+  }
+}

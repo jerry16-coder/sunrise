@@ -1,0 +1,25 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150px; /* Adjust based on your logo size */
+    background-color: transparent;
+  }
+  
+  .logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    height: 120px; /* Adjust as needed */
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      height: 100px;
+    }
+  
+    .logo {
+      height: 80px;
+    }
+  }
+  
