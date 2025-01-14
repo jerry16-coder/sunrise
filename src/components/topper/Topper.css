@@ -3,6 +3,14 @@
   padding: 20px;
 }
 
+.topper-heading{
+  font-family: 'DM Serif Text', serif;
+}
+
+.card-title{
+  font-family: 'DM Serif Text', serif;
+}
+
 /* Circular Image for School Topper */
 .circular-image {
   width: 250px;
